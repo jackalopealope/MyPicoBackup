@@ -1,0 +1,1 @@
+dir $Desktop\* | Rename-Item -NewName { $_.name.substring(0,$_.name.length-10) }
